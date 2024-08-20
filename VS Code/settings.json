@@ -1,0 +1,191 @@
+{
+    "workbench.colorTheme": "Solarized Dark",
+    "workbench.activityBar.location": "top",
+    "editor.fontLigatures": false,
+    "editor.fontSize": 14,
+    "editor.wordWrap": "on",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "window.zoomLevel": 0.01,
+    "update.showReleaseNotes": false,
+    "editor.lineNumbers": "relative",
+    "editor.suggest.insertMode": "replace",
+    "editor.linkedEditing": true,
+    "editor.minimap.enabled": false,
+    "workbench.startupEditor": "none",
+    "workbench.iconTheme": "vscode-icons",
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "zenMode.hideStatusBar": false,
+    "zenMode.hideLineNumbers": false,
+    // "explorer.openEditors.visible": 0,
+    "editor.rulers": [80, 120],
+
+
+    "git.ignoreLegacyWarning": true,
+    "git.autofetch": true,
+    "git.ignoreRebaseWarning": true,
+    "files.exclude": {
+        // "**/.*": true, // Exclude all hidden files and folders
+        "**/.gitignore": false, // Explicitly include .gitignore
+        "**/hs_err*.log": true,
+        "**/AutoGe*.avsc": true,
+        "**/QueryR*.java": true
+        },
+    "search.exclude": {
+            "**/.*": true, // Exclude all hidden files and folders
+            "**/.gitignore": false // Explicitly include .gitignore
+            },
+      
+
+    "markdown.extension.completion.enabled": true, 
+            "markdown.extension.completion.respectVscodeSearchExclude": true,
+
+    "vim.leader": "<Space>",
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+
+
+    "vim.insertModeKeyBindings": [
+      {
+        "before": ["j", "j"],
+        "after": ["<Esc>"]
+      }
+    ],
+
+
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // My micros
+    // micros 1, prepare sqoop column list from sql file
+    {
+            "before": ["<leader>", "i"],
+            "after": [
+                "v", "e", "y",           // Simulates 'vey'
+                "5", "G",                // Simulates '5G'
+                "$",                     // Simulates '$'
+                "a", ",", " ", "<Esc>",  // Simulates 'a, <space><Esc>'
+                "p",                     // Simulates 'p'
+                "", ""                 // Simulates '`'
+            ]
+        },
+
+        {
+          "before": ["<leader>",";"],
+          "after": [
+            "<Esc>", "A", ";" , "<Esc>", "o" 
+          ]
+        },
+
+        {
+            "before": ["<C-up>"],
+            "commands": ["scrollLineUp","scrollLineUp", "scrollLineUp"]
+        },
+        {
+            "before": ["<C-down>"],
+            "commands": ["scrollLineDown","scrollLineDown","scrollLineDown" ]
+        },
+
+    // NAVIGATION
+    // switch b/w buffers
+    { "before": ["<S-h>"], "commands": [":bprevious"] },
+    { "before": ["<S-l>"], "commands": [":bnext"] },
+
+    // splits
+    { "before": ["leader", "v"], "commands": [":vsplit"] },
+    { "before": ["leader", "s"], "commands": [":split"] },
+
+    { "before": ["leader", "left"], 
+    "commands": ["workbench.action.moveEditorToLeftGroup"] },
+    { "before": ["leader", "right"], 
+    "commands": ["workbench.action.moveEditorToRightGroup"] },
+
+    // { "before": ["leader", "right"], 
+    // "commands": ["workbench.action.splitEditorRight"] },
+
+    // panes
+    {
+      "before": ["leader", "h"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+      "before": ["leader", "j"],
+      "commands": ["workbench.action.focusBelowGroup"]
+    },
+    {
+      "before": ["leader", "k"],
+      "commands": ["workbench.action.focusAboveGroup"]
+    },
+    {
+      "before": ["leader", "l"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+    {
+     "before": ["<C-n>"],
+     "commands": ["workbench.action.files.newUntitledFile"] 
+    },
+
+
+    {
+        "before": ["leader", "down"],
+        "commands": ["editor.action.copyLinesDownAction"]
+    },
+    {
+        "before": ["leader", "up"],
+        "commands": ["editor.action.copyLinesUpAction"]
+    },
+
+
+    // NICE TO HAVE
+    { "before": ["leader", "w"], "commands": [":w!"] },
+    { "before": ["leader", "q"], "commands": [":q!"] },
+    { "before": ["leader", "x"], "commands": [":x!"] },
+// add multiple curser
+    { "before": ["leader", "m"], "commands": ["editor.action.insertCursorBelow"] },
+
+    {
+      "before": ["[", "d"],
+      "commands": ["editor.action.marker.prev"]
+    },
+    {
+      "before": ["]", "d"],
+      "commands": ["editor.action.marker.next"]
+    },
+    {
+      "before": ["<leader>", "c", "a"],
+      "commands": ["editor.action.quickFix"]
+    },
+    { "before": ["leader", "f"], "commands": ["workbench.action.quickOpen"] },
+    { "before": ["leader", "p"], "commands": ["editor.action.formatDocument"] },
+    {
+      "before": ["g", "h"],
+      "commands": ["editor.action.showDefinitionPreviewHover"]
+    }
+  ],
+
+
+    "vim.visualModeKeyBindings": [
+    // Stay in visual mode while indenting
+    { "before": ["<"], "commands": ["editor.action.outdentLines"] },
+    { "before": [">"], "commands": ["editor.action.indentLines"] },
+    // Move selected lines while staying in visual mode
+    { "before": ["J"], "commands": ["editor.action.moveLinesDownAction"] },
+    { "before": ["K"], "commands": ["editor.action.moveLinesUpAction"] },
+    // toggle comment selection
+    { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
+  ],
+
+
+    "vim.handleKeys": {
+      "<C-a>": false,
+      "<C-f>": false,
+      "<C-c>": false,
+      "<C-b>": false,
+    },
+
+
+    "extensions.experimental.affinity": {
+      "vscodevim.vim": 1
+    },
+    "hediet.vscode-drawio.resizeImages": null
+} 
